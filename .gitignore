@@ -1,0 +1,10 @@
+build/
+.vscode/
+data/passwords.txt
+dist/
+*.user
+*.suo
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
