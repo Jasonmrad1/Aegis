@@ -17,6 +17,14 @@ int main(int argc, char* argv[]) {
             UI::line("Aegis v1.0.0");
             return 0;
         }
+        if (arg == "--help" || arg == "-h") {
+            UI::line("Usage: aegis");
+            UI::line("       aegis --version");
+            return 0;
+        }
+
+        UI::error("Unknown argument. Run 'aegis' with no args or use --version.");
+        return 1;
     }
 
     std::string initError;
