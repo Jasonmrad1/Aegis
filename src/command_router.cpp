@@ -28,7 +28,7 @@ enum Command {
 
 namespace {
     const char* kAppName = "Aegis";
-    const char* kAppVersion = "1.0.0";
+    const char* kAppVersion = "1.0.1";
 }
 
 std::vector<std::string> split(const std::string& line)
@@ -467,9 +467,6 @@ bool CommandRouter::handle(const std::string& line)
                 UI::write("Password: ");
                 std::getline(std::cin >> std::ws, pass);
             }
-
-            UI::write("Note: ");
-            std::getline(std::cin >> std::ws, note);
 
             {
                 std::string error;

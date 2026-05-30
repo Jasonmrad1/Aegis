@@ -1,4 +1,4 @@
-# Aegis Password Vault
+# Aegis Password Vault v1.0.1
 
 A CLI password manager with encrypted storage, search, and clipboard copy.
 

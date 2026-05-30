@@ -6,10 +6,18 @@
 #include "ui.hpp"
 #include "storage.hpp"
 
-int main() {
+int main(int argc, char* argv[]) {
     UI::init();
     AuthManager auth;
     PasswordManager pm(auth);
+
+    if (argc > 1) {
+        std::string arg = argv[1];
+        if (arg == "--version" || arg == "-v") {
+            UI::line("Aegis v1.0.0");
+            return 0;
+        }
+    }
 
     std::string initError;
     if (!Storage::createDataDirectories(initError)) {
