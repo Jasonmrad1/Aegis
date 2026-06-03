@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
     if (argc > 1) {
         std::string arg = argv[1];
         if (arg == "--version" || arg == "-v") {
-            UI::line("Aegis v1.0.0");
+            UI::line("Aegis v1.0.1");
             return 0;
         }
         if (arg == "--help" || arg == "-h") {

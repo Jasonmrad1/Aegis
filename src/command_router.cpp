@@ -28,7 +28,7 @@ enum Command {
 
 namespace {
     const char* kAppName = "Aegis";
-    const char* kAppVersion = "1.0.0";
+    const char* kAppVersion = "1.0.1";
 }
 
 std::vector<std::string> split(const std::string& line)
