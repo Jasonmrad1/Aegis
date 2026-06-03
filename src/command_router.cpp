@@ -494,6 +494,12 @@ bool CommandRouter::handle(const std::string& line)
                 return true;
             }
 
+            Entry current(0, "", "", "", "");
+            if (!manager.getEntryById(id, current)) {
+                UI::warn("Not found");
+                return true;
+            }
+
             std::string website, user, pass, note;
             bool hasFlag = false;
 
@@ -516,12 +522,6 @@ bool CommandRouter::handle(const std::string& line)
             }
 
             if (hasFlag) {
-                Entry current(0, "", "", "", "");
-                if (!manager.getEntryById(id, current)) {
-                    UI::warn("Not found");
-                    return true;
-                }
-
                 if (website.empty()) {
                     website = current.website;
                 }
@@ -534,6 +534,10 @@ bool CommandRouter::handle(const std::string& line)
                 if (note.empty()) {
                     note = current.note;
                 }
+            }
+
+            if (note.empty()) {
+                note = current.note;
             }
 
             if (website.empty()) {
@@ -549,11 +553,6 @@ bool CommandRouter::handle(const std::string& line)
             if (pass.empty()) {
                 UI::write("Password: ");
                 std::getline(std::cin >> std::ws, pass);
-            }
-
-            if (note.empty()) {
-                UI::write("Note: ");
-                std::getline(std::cin >> std::ws, note);
             }
 
             {
